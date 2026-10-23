@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-display text-gold-200 antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply min-h-screen bg-well-900;
+    overflow-wrap: anywhere;
+    background-image:
+      radial-gradient(ellipse at 50% -10%, rgba(245, 197, 66, 0.28), transparent 55%),
+      radial-gradient(ellipse at 100% 100%, rgba(154, 111, 11, 0.25), transparent 50%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-gold-400 text-well-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-semibold transition
+      disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-300;
+  }
+  .btn-gold {
+    @apply btn bg-gold-foil bg-[length:200%_100%] text-well-900 shadow-[0_0_24px_rgba(245,197,66,0.35)]
+      hover:animate-shimmer hover:shadow-[0_0_36px_rgba(245,197,66,0.6)] active:scale-95;
+  }
+  .btn-ghost {
+    @apply btn border border-gold-500/40 bg-gold-400/5 text-gold-200 hover:bg-gold-400/15;
+  }
+  .card {
+    @apply rounded-2xl border border-gold-500/30 bg-well-800/70 p-4 shadow-[inset_0_1px_0_rgba(255,227,138,0.12)] backdrop-blur;
+  }
+  .input {
+    @apply w-full rounded-xl border border-gold-500/30 bg-well-900/80 px-4 py-2.5 text-gold-200
+      placeholder:text-gold-200/40 focus:border-gold-300 focus:outline-none;
+  }
+  .gold-text {
+    @apply bg-gold-foil bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer;
+  }
+}
+
+/* Glitter: fixed layers of tiny dots that twinkle out of phase. Decorative only. */
+.glitter,
+.glitter::before {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: repeat;
+}
+.glitter {
+  background-image:
+    radial-gradient(circle, #fff1b8 0 1px, transparent 1.5px),
+    radial-gradient(circle, #f5c542 0 1px, transparent 1.5px),
+    radial-gradient(circle, #ffffff 0 0.8px, transparent 1.3px);
+  background-size: 140px 140px, 97px 97px, 211px 211px;
+  background-position: 0 0, 40px 60px, 90px 20px;
+  animation: twinkle 3.5s ease-in-out infinite;
+}
+.glitter::before {
+  content: '';
+  background-image:
+    radial-gradient(circle, #ffe38a 0 1.2px, transparent 1.8px),
+    radial-gradient(circle, #fff 0 0.8px, transparent 1.3px);
+  background-size: 173px 173px, 119px 119px;
+  background-position: 20px 80px, 70px 10px;
+  animation: twinkle 2.7s ease-in-out infinite 1.1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitter,
+  .glitter::before,
+  .gold-text,
+  .animate-float {
+    animation: none !important;
+  }
+}
+
+.receipt-edge {
+  --r: 6px;
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / calc(2 * var(--r)) 100%;
+}

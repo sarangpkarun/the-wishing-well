@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>The Wishing Well</title>
+    <meta
+      name="description"
+      content="A joke site. Post a wish and strangers with fake fortunes grant it with questionable gifts. Nothing here is real."
+    />
+    <meta name="theme-color" content="#070504" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph / Twitter. %SITE_URL% is filled in at build time (see vite.config.ts). -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Wishing Well" />
+    <meta property="og:title" content="The Wishing Well" />
+    <meta
+      property="og:description"
+      content="Post a wish. Strangers with fake fortunes grant it with questionable gifts. Nothing here is real."
+    />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta property="og:image" content="%SITE_URL%/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="The Wishing Well: gold lettering on black. Post a wish, get a questionable gift. Not real."
+    />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Wishing Well" />
+    <meta
+      name="twitter:description"
+      content="Post a wish. Strangers with fake fortunes grant it with questionable gifts. Nothing here is real."
+    />
+    <meta name="twitter:image" content="%SITE_URL%/og-image.png" />
+    <meta name="twitter:image:alt" content="The Wishing Well: gold lettering on black." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Courier+Prime:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <noscript>The Wishing Well needs JavaScript. This is a joke site. No real money or gifts are exchanged.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
